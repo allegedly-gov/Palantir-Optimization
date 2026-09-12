@@ -30,7 +30,7 @@ namespace PalantirOptimization
             var fadeOut = new DoubleAnimation(1, 0, TimeSpan.FromSeconds(0.4));
             fadeOut.Completed += async (s, ev) => 
             {
-                // Ensure we clean up / restore if closing
+                
                 await OptimizerCore.RestoreAsync();
                 this.Close();
             };
@@ -68,8 +68,8 @@ namespace PalantirOptimization
             if (result.success)
             {
                 StatusText.Foreground = System.Windows.Media.Brushes.MediumPurple;
-                OptimizeBtn.IsEnabled = false; // Prevent double optimization
-                RestoreBtn.IsEnabled = true;   // Enable restore
+                OptimizeBtn.IsEnabled = false; 
+                RestoreBtn.IsEnabled = true;   
             }
             else
             {
